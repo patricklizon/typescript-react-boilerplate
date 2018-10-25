@@ -1,0 +1,40 @@
+{
+  "extends": [
+    "stylelint-config-recommended-scss",
+  ],
+  "rules": {
+    "at-rule-no-vendor-prefix": true,
+    "block-no-empty": true,
+    "comment-empty-line-before": "always",
+    "declaration-no-important": true,
+    "declaration-block-no-shorthand-property-overrides": true,
+    "declaration-colon-space-after": "always",
+    "declaration-colon-space-before": "never",
+    "function-url-quotes": "always",
+    "font-weight-notation": "numeric",
+    "font-family-name-quotes": "always-unless-keyword",
+    "indentation": 2,
+    "max-empty-lines": 3,
+    "no-missing-end-of-source-newline": true,
+    "no-empty-first-line": true,
+    "no-duplicate-selectors": true,
+    "number-leading-zero": "never",
+    "property-no-vendor-prefix": true,
+    "string-quotes": "double",
+    "selector-no-qualifying-type": true,
+    "selector-max-id": 0,
+    "selector-combinator-space-after": "always",
+    "selector-attribute-quotes": "always",
+    "selector-attribute-operator-space-before": "never",
+    "selector-attribute-operator-space-after": "never",
+    "selector-attribute-brackets-space-inside": "never",
+    "selector-pseudo-element-colon-notation": "double",
+    "selector-pseudo-class-parentheses-space-inside": "never",
+    "selector-no-vendor-prefix": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      { ignorePseudoClasses: ["global", "local"] }
+    ],
+    "value-no-vendor-prefix": true,
+  }
+}

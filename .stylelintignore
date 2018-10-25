@@ -1,0 +1,5 @@
+/node_modules/
+/src/styles/config/*
+/src/styles/generic/*
+/src/styles/utilities/*
+/src/styles/tools/*

@@ -1,0 +1,13 @@
+.page {
+  @include lock (
+    padding-top,
+    $global-spacing-unit-tiny,
+    $global-spacing-unit-normal
+  );
+
+  @include lock (
+    padding-bottom,
+    $global-spacing-unit-tiny,
+    $global-spacing-unit-normal
+  );
+}

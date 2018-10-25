@@ -1,0 +1,53 @@
+/// Creates media breakpoint above `$name` resolution
+/// @param {String} $name - tiny | phone | tablet | laptop | desktop
+/// @see `src/styles/config/_config.core.scss`
+
+@mixin media-breakpoint-up ($name) {
+  @media (min-width: select-breakpoint($name)) {
+    @content;
+  }
+}
+
+
+
+/// Creates media breakpoint below `$name` resolution
+/// @param {String} $name - tiny | phone | tablet | laptop | desktop
+/// @see `src/styles/config/_config.core.scss`
+
+@mixin media-breakpoint-down ($name) {
+  @media (max-width: select-breakpoint($name)) {
+    @content;
+  }
+}
+
+
+
+/// Creates media breakpoint only at `$name` resolution
+/// @param {String} $name - tiny | phone | tablet | laptop | desktop
+/// @see `src/styles/config/_config.core.scss`
+
+@mixin media-breakpoint-only ($name) {
+  @media (width: select-breakpoint($name)) {
+    @content;
+  }
+}
+
+
+
+/// Creates media breakpoint between `$name` resolution
+/// @param {String} $min - tiny | phone | tablet | laptop | desktop
+/// @param {String} $max - tiny | phone | tablet | laptop | desktop - `$min`
+/// @see `src/styles/config/_config.core.scss`
+
+@mixin media-breakpoint-between ($min, $max) {
+  $a: strip-unit(select-breakpoint($min));
+  $b: strip-unit(select-breakpoint($max));
+
+  @if (not($a < $b)) {
+    @error "Passed `$min` value should be smaller than `$max`!";
+  }
+
+  @media (min-width: select-breakpoint($min)) and (max-width: select-breakpoint($max)) {
+    @content;
+  }
+}

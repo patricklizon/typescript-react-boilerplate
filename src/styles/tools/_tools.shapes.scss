@@ -1,0 +1,26 @@
+/// Sets element'swidth and height.
+/// @param {Length} $width
+/// @param {Length} $height [$width] - optional
+
+@mixin rectangle ($width, $height: $width) {
+  width: $width;
+  height: $height;
+  flex-shrink: 0;
+}
+
+
+
+/// Makes element looks like circle
+/// @param {Length} $d [false] - optional
+
+@mixin circle ($d: false) {
+  @if $d {
+    @include rect($d);
+  }
+
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+}

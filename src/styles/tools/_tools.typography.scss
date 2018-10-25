@@ -1,0 +1,11 @@
+@mixin font-tiny {
+  @include lock(font-size, 10px, 12px);
+}
+
+@mixin font-small {
+  @include lock(font-size, 12px, 14px);
+}
+
+@mixin font-large {
+  @include lock(font-size, 20px, 28px);
+}

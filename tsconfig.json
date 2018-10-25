@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "alwaysStrict": true,
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitThis": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2016",
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.json",
+    "typings/**/*.ts",
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
+  ]
+}

@@ -1,0 +1,47 @@
+// Color palette.
+
+$global-color-brand:         #83BCA9;
+$global-color-black:         #131200;
+$global-color-white:         #FEFFFE;
+$global-color-gray:          #CECCCC;
+
+$global-color-blue:            #08B2E3;
+$global-color-blue-light:      lighten($global-color-blue, 15%);
+$global-color-blue-lighter:    lighten($global-color-blue, 30%);
+$global-color-blue-dark:       darken($global-color-blue, 15%);
+$global-color-blue-darker:     darken($global-color-blue, 30%);
+
+$global-color-yellow:          #F7CB15;
+$global-color-yellow-light:    lighten($global-color-yellow, 15%);
+$global-color-yellow-lighter:  lighten($global-color-yellow, 30%);
+$global-color-yellow-dark:     darken($global-color-yellow, 15%);
+$global-color-yellow-darker:   darken($global-color-yellow, 30%);
+
+$global-color-red:            #EE6352;
+$global-color-red-light:      lighten($global-color-red, 15%);
+$global-color-red-ligther:    lighten($global-color-red, 30%);
+$global-color-red-dark:       darken($global-color-red, 15%);
+$global-color-red-darker:     darken($global-color-red, 30%);
+
+
+
+
+// Utility colors.
+
+$global-color-disabled:  $global-color-gray;
+
+$global-color-info:      $global-color-blue;
+$global-color-warning:   $global-color-yellow;
+$global-color-error:     $global-color-red;
+
+
+
+// Basic theme.
+
+$global-theme-app-background-color:          $global-color-white;
+$global-theme-app-color:                     $global-color-black;
+
+$global-theme-user-select-color:             $global-color-white;
+$global-theme-user-select-background-color:  $global-color-black;
+
+$global-theme-caret-color:                   $global-color-brand;

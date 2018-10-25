@@ -1,0 +1,68 @@
+/// Creates wrapper
+
+@mixin make-wrapper {
+  max-width: $global-wrapper-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  $_previous-key: "";
+  $_previous-value: "";
+
+  @each $key, $value in $global-wrapper-margins {
+    @if ($key == tiny) {
+      $_key: $key;
+      $_previous-value: $value;
+
+      width: calc(100% - #{2 * select-wrapper-margin(tiny)});
+    } @else {
+      @include media-breakpoint-up (#{$key}) {
+
+        // if there are duplicated consecutive values in $global-wrapper-margins
+        // each next occurrence is dropped.
+
+        @if (not($value == $_previous-value)) {
+          $_previous-key: $key;
+          $_previous-value: $value;
+
+          width: calc(100% - #{2 * select-wrapper-margin($key)});
+        }
+      }
+    }
+  }
+}
+
+
+
+/// Visually hides element.
+/// It's useful when something has to be in document
+/// because of ie. accessibility reasons, but should not be visible.
+
+@mixin visually-hidden {
+  /* stylelint-disable */
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  /* stylelint-enable */
+}
+
+
+
+/// Adds device's safe-area-inset-* value to padding
+/// @param {String} $side - top | right | bottom | left
+/// @param {Length} $value - desired padding value
+
+@mixin padding-with-safe-area ($side, $value: 0px) {
+  @if (not($value == 0px)) {
+    padding-#{$side}: $value;
+  }
+
+  @supports(padding: max(0px)) {
+    // `m#{a}x` is written like this to prevent sass-loader from failing
+    padding-#{$side}: m#{a}x($value, env(safe-area-inset-left));
+  }
+}

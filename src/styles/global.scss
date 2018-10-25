@@ -1,0 +1,55 @@
+@import "./generic/index";
+@import "./elements/index";
+
+
+
+// Default app layout.
+
+:global {
+  html,
+  body,
+  [id="app"] {
+    height: 100%;
+  }
+
+  [id="app"] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  [id="main"] {
+    flex: 1 0 auto;
+  }
+
+  [id="footer"] {
+    @include padding-with-safe-area(bottom);
+  }
+}
+
+
+
+// Basic theme and typography styles.
+
+:root {
+  background-color: $global-theme-app-background-color;
+  color: $global-theme-app-color;
+
+  // Typography.
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: ($global-font-size / 16px) * 1em;
+  line-height: $global-line-height / $global-font-size;
+
+  // Improve readibility
+  font-feature-settings: "ss06" on;
+  font-variant-numeric: tabular-nums;
+
+  // Font smooting.
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  ::selection {
+    background-color: $global-theme-user-select-background-color;
+    color: $global-theme-user-select-color;
+  }
+}

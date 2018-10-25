@@ -1,0 +1,5 @@
+.wrapper {
+  @include make-wrapper;
+  @include padding-with-safe-area(left);
+  @include padding-with-safe-area(right);
+}

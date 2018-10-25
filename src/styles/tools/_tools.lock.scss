@@ -1,0 +1,25 @@
+/// Set property's value that sales linear between two sizes
+/// relatively to viewport width.
+/// @param {String} $property - css property that takes sizes as values
+/// @param {Length} $min - minimal desired value at `$global-breakpoint-tiny`
+/// @param {Length} $max - minimal desired value at `$global-breakpoint-desktop`
+/// @requires {Function} selec-breakpoint - breakpoint selector
+
+
+
+@mixin lock ($property, $min, $max) {
+  $desktop-width: select-breakpoint(desktop);
+  $tiny-width: select-breakpoint(tiny);
+  $a: strip-unit($max - $min);
+  $b: strip-unit($desktop-width - $tiny-width);
+
+  #{$property}: calc(#{$min} + #{$a} * ((100vw - #{$tiny-width}) / #{$b}));
+
+  @media (max-width: #{$tiny-width}) {
+    #{$property}: #{$min};
+  }
+  
+  @media (min-width: #{$desktop-width}) {
+    #{$property}: #{$max};
+  }
+}

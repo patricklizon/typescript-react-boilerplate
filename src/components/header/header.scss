@@ -1,0 +1,27 @@
+.header {
+  @include lock(
+    padding-bottom,
+    $global-spacing-unit-small,
+    $global-spacing-unit-normal
+  );
+
+  @include lock(
+    padding-top,
+    $global-spacing-unit-small,
+    $global-spacing-unit-normal
+  );
+
+  background-color: $global-color-brand;
+  color: $global-color-white;
+  position: relative;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  @include lock(font-size, 18px, 24px);
+}

@@ -1,0 +1,36 @@
+/// Global breakpoints selector.
+/// @param {String} $name - tiny | phone | tablet | laptop | desktop
+
+@function select-breakpoint ($name) {
+  @if (not(map-has-key($global-breakpoints, $name))) {
+    @error "Key `#{$name}` does not exist in `global-breakpoints`!";
+  }
+
+  @return map-get($global-breakpoints, $name);
+}
+
+
+
+/// Global Wrapper's margin selector.
+/// @param {String} $name - tiny | phone | tablet | laptop | desktop
+
+@function select-wrapper-margin ($name) {
+  @if (not(map-has-key($global-wrapper-margins, $name))) {
+    @error "Key #{$name} does not exist in `$global-wrapper-margins`!";
+  }
+
+  @return map-get($global-wrapper-margins, $name);
+}
+
+
+
+/// Global grid settings selector..
+/// @param {String} $setting - columns | grid-gap
+
+@function select-grid-setting ($setting) {
+  @if (not(map-has-key($global-grid-settings, $setting))) {
+    @error "Key #{$name} does not exist in `$global-grid-setting`!";
+  }
+
+  @return map-get($global-grid-setting, $name);
+}

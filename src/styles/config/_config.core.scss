@@ -1,0 +1,158 @@
+// Baseline grid lines height.
+// Every spacing metric should be based on this.
+
+$global-baseline:  6px !default;
+
+
+
+// How many grid lines should our spacing unit variants span?
+// Each value should be an unitless integer.
+
+$global-spacing-unit-factors: (
+  tiny:    1,
+  small:   2,
+  normal:  4,
+  large:   8,
+  huge:    16
+);
+
+
+
+// Spacing values are determined based on project’s global baseline grid.
+// It is not recommended that you modify these following variables
+// (it can break your vertical rhythm), but if you need to, you can.
+
+$global-spacing-unit-tiny:    $global-baseline * map-get($global-spacing-unit-factors, tiny);
+$global-spacing-unit-small:   $global-baseline * map-get($global-spacing-unit-factors, small);
+$global-spacing-unit-normal:  $global-baseline * map-get($global-spacing-unit-factors, normal);
+$global-spacing-unit-large:   $global-baseline * map-get($global-spacing-unit-factors, large);
+$global-spacing-unit-huge:    $global-baseline * map-get($global-spacing-unit-factors, huge);
+
+
+// Base typographical styles.
+
+$global-font-size:    16px !default;
+$global-line-height:  $global-spacing-unit-normal !default;
+
+
+
+// Base layout rules.
+// Set wrapper size and it's side gaps for each breakpoint,
+// number of grid's columns and gap between them.
+
+$global-wrapper-max-width:  1560px !default;
+
+$global-grid-settings: (
+  columns:  12,
+  column-gap: 16px
+);
+
+$global-wrapper-margins: (
+  tiny:     8px,
+  phone:    16px,
+  tablet:   24px,
+  laptop:   7vw,
+  desktop:  7vw,
+);
+
+$global-breakpoints: (
+  tiny:     320px,
+  phone:    768px,
+  tablet:   768px,
+  laptop:   992px,
+  desktop:  1200px,
+);
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+// CONFIG CHECKS
+/////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+// Check that the rules are pixel numbers.
+
+@each $_value in
+      $global-baseline
+      $global-font-size
+      $global-line-height
+      $global-wrapper-max-width
+      $global-spacing-unit-tiny
+      $global-spacing-unit-small
+      $global-spacing-unit-normal
+      $global-spacing-unit-large
+      $global-spacing-unit-huge
+      map-get($global-breakpoints, tiny)
+      map-get($global-breakpoints, phone)
+      map-get($global-breakpoints, tablet)
+      map-get($global-breakpoints, laptop)
+      map-get($global-breakpoints, desktop) {
+
+  @if (type-of($_value) == number) {
+
+    @if (unit($_value) != "px") {
+      @error "`#{$_value}` needs to be a pixel value.";
+    }
+
+  } @else {
+    @error "`#{$_value}` needs to be a number.";
+  }
+
+}
+
+// Check if wrapper's gaps have length unit and are integer numbers.
+
+@each $_wrapper-gap in
+      map-get($global-wrapper-margins, tiny)
+      map-get($global-wrapper-margins, phone)
+      map-get($global-wrapper-margins, tablet)
+      map-get($global-wrapper-margins, laptop)
+      map-get($global-wrapper-margins, desktop) {
+
+  @if (type-of($_wrapper-gap) == number) {
+
+    @if (unitless($_wrapper-gap)) {
+      @error "`#{$_wrapper-gap}` has to have length unit.";
+    }
+
+    @if ($_wrapper-gap != ceil($_wrapper-gap)) {
+      @error "`#{$_wrapper-gap}` needs to be an integer.";
+    }
+
+  } @else {
+    @error "`#{$_wrapper-gap}` needs to be a number.";
+  }
+
+}
+
+// Check that the chosen rules are unitless, integer numbers.
+
+@each $_value in
+      map-get($global-spacing-unit-factors, tiny)
+      map-get($global-spacing-unit-factors, small)
+      map-get($global-spacing-unit-factors, normal)
+      map-get($global-spacing-unit-factors, large)
+      map-get($global-spacing-unit-factors, huge) {
+
+  @if (type-of($_value) == number) {
+
+    @if (unitless($_value) == false) {
+      @error "`#{$_value}` needs to be unitless.";
+    }
+
+    @if ($_value != ceil($_value)) {
+      @error "`#{$_value}` needs to be an integer.";
+    }
+
+  } @else {
+    @error "`#{$_value}` needs to be a number.";
+  }
+
+}

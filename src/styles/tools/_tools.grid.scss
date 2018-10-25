@@ -1,0 +1,7 @@
+/// Creates container for CSS Grid layout.
+/// @param {Number} $columns [$global-grid-columns] - number of columns used in project
+
+@mixin make-grid ($columns: select-grid-setting(columns)) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+}

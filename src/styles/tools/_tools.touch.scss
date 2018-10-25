@@ -1,0 +1,19 @@
+/// Creates styles for devices that has marked mouse 
+/// r trackpad as a primary pointing device.
+
+@mixin no-touch-only {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+
+
+/// Creates styles for devices that has marked touchscreen
+/// as a primary pointing device.
+
+@mixin touch-only {
+  @media (hover: none) and (pointer: coarse) {
+    @content;
+  }
+}

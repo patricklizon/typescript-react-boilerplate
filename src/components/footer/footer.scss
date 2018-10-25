@@ -1,0 +1,20 @@
+.footer {
+  background-color: $global-color-black;
+  color: $global-color-white;
+}
+
+
+
+.content {
+  @include lock(
+    padding-bottom,
+    $global-spacing-unit-small,
+    $global-spacing-unit-normal
+  );
+
+  @include lock(
+    padding-top,
+    $global-spacing-unit-small,
+    $global-spacing-unit-normal
+  );
+}

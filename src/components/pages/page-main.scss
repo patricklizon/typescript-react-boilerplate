@@ -1,0 +1,17 @@
+.paragraph {
+  @include lock(
+    margin-bottom,
+    $global-spacing-unit-small,
+    $global-spacing-unit-large
+  );
+
+  @include lock(
+    margin-top,
+    $global-spacing-unit-small,
+    $global-spacing-unit-large
+  );
+
+  @include font-large;
+
+  text-align: center;
+}

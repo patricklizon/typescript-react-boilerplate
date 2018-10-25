@@ -1,0 +1,50 @@
+{
+  "extends": [
+    "tslint-react",
+    "tslint-react-a11y"
+  ],
+  "rulesDirectory": ["./node_modules/tslint-eslint-rules/dist/rules"],
+  "rules": {
+    "interface-name": [true, "always-prefix"],
+    "no-invalid-template-strings": true,
+    "no-sparse-arrays": true,
+    "no-object-literal-type-assertion": true,
+    "prefer-conditional-expression": true,
+    "prefer-object-spread": true,
+    "no-this-assignment": true,
+    "ban-comma-operator": true,
+    "no-duplicate-switch-case": true,
+    "no-duplicate-imports": true,
+    "no-implicit-dependencies": false,
+    "no-constant-condition": false,
+    "no-empty-character-class": true,
+    "no-extra-boolean-cast": true,
+    "no-extra-semi": true,
+    "no-invalid-regexp": true,
+    "no-regex-spaces": true,
+    "no-unexpected-multiline": true,
+    "triple-equals": true,
+    "no-eval": true,
+    "no-switch-case-fall-through": true,
+    "no-duplicate-variable": true,
+    "no-string-throw": true,
+    "no-unused-expression": true,
+    "radix": true,
+    "no-var-keyword": true,
+    "no-console": true,
+    "no-debugger": true,
+    "no-invalid-this": false,
+    "typedef": [true, "call-signature"],
+    "ordered-imports": true,
+    "no-submodule-imports": false,
+    "no-use-before-declare": false,
+    "jsx-boolean-value": false
+    
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "**/*.json"
+    ]
+  }
+}
