@@ -1,0 +1,15 @@
+.icon {
+  &:global(.small) {
+    @include rectangle(16px);
+  }
+
+  &:global(.medium) {
+    @include rectangle(32px);
+  }
+
+  svg {
+    color: inherit;
+    fill: currentColor;
+    width: 100%;
+  }
+}
