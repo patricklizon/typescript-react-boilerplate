@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 const webpack = require("webpack");
 const path = require('path');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
@@ -27,7 +28,7 @@ module.exports = {
   },
 
   entry: {
-      ...config.entry,
+    ...config.entry,
   },
 
   resolve: config.resolve,
@@ -35,6 +36,12 @@ module.exports = {
   output: config.output,
 
   plugins: [
+    new Dotenv({
+      path: path.resolve(__dirname, '../.env.dev'),
+      safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+      silent: false
+    }),
     new ForkTsCheckerWebpackPlugin({
       checkSyntacticErrors: true,
     }),

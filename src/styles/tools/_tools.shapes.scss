@@ -15,7 +15,7 @@
 
 @mixin circle ($d: false) {
   @if $d {
-    @include rect($d);
+    @include rectangle ($d);
   }
 
   border-radius: 50%;

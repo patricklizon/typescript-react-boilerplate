@@ -3,7 +3,7 @@ import * as React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { CommonHtmlProps } from '../../../../typings/html';
-import { appRoutes } from '../../../app-routes';
+import { headerNavigationRoutes } from '../../../routes';
 
 import * as styles from './header-navigation.scss';
 
@@ -47,9 +47,7 @@ const HeaderNavigation: React.SFC<CommonHtmlProps> = ({ className }) => {
       </h2>
 
       <ul className={styles.linksList}>
-        <ListedLink to={appRoutes.main} name="Main" />
-        <ListedLink to={appRoutes.packages} name="Packages" />
-        <ListedLink to={appRoutes.styles} name="Styles" />
+        {headerNavigationRoutes.map(route => <ListedLink to={route.pathname} name={route.name} key={route.pathname} />)}
       </ul>
     </nav>
   );

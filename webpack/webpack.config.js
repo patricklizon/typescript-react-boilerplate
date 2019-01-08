@@ -85,7 +85,10 @@ module.exports = {
             options: {
               implementation: require("dart-sass"),
               sourceMap: true,
-              data: '@import "~styles/common-imports";'
+              data: '@import "~styles/common-imports";',
+              exclude: [
+                path.resolve(__dirname, '../src/styles/common-imports.scss')
+              ]
             }
           },
         ],
@@ -97,6 +100,10 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       },
       // Assets
+      {
+        test: /\.svg$/,
+        loader: 'raw-loader'
+      },
       {
         test: /\.(jpg|png|gif)$/,
         use: [

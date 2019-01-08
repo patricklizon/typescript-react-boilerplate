@@ -2,7 +2,7 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import { appRoutes } from '../app-routes';
+import { routes } from '../routes';
 
 import { Footer } from './footer/footer';
 import { Header } from './header/header';
@@ -21,7 +21,7 @@ class App extends React.Component {
 
             <Switch>
               <Route
-                path={appRoutes.main}
+                path={routes.main.pathname}
                 component={PageMain}
                 exact
               />
