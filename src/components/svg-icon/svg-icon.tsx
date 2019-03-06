@@ -3,7 +3,7 @@ import * as React from "react";
 
 import { CommonHtmlProps } from "../../../typings/html";
 
-import * as styles from "./svg-inline.scss";
+import * as styles from "./svg-icon.scss";
 
 
 
@@ -16,7 +16,7 @@ interface ISVGIcon extends CommonHtmlProps {
 
 export const SVGIcon:React.SFC<ISVGIcon> = ({ svg, size }) => {
   function createMarkup (): React.ReactNode {
-    return <div className={cn(styles.icon, size)} dangerouslySetInnerHTML={{__html: svg}} />
+    return <div className={cn(styles.svgIcon, size)} dangerouslySetInnerHTML={{__html: svg}} />
   }
 
   return (<>{createMarkup()}</>)

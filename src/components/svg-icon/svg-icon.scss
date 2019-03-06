@@ -1,4 +1,4 @@
-.icon {
+.svg-icon {
   &:global(.small) {
     @include rectangle(16px);
   }
@@ -8,8 +8,9 @@
   }
 
   svg {
+    @include rectangle(1em);
+
     color: inherit;
     fill: currentColor;
-    width: 100%;
   }
 }
