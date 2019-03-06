@@ -1,11 +1,15 @@
 {
   "extends": [
     "tslint-react",
-    "tslint-react-a11y"
+    "tslint-react-a11y",
+    "tslint-react-hooks"
   ],
   "rulesDirectory": ["./node_modules/tslint-eslint-rules/dist/rules"],
   "rules": {
+    "eofline": true,
+    "forin": true,
     "interface-name": [true, "always-prefix"],
+    "no-bitwise": true,
     "no-invalid-template-strings": true,
     "no-sparse-arrays": true,
     "no-object-literal-type-assertion": true,
@@ -31,15 +35,19 @@
     "no-unused-expression": true,
     "radix": true,
     "no-var-keyword": true,
-    "no-console": true,
+    "no-construct": true,
+    "no-console": [true, "log", "error"],
     "no-debugger": true,
     "no-invalid-this": false,
     "typedef": [true, "call-signature"],
     "ordered-imports": true,
     "no-submodule-imports": false,
     "no-use-before-declare": false,
-    "jsx-boolean-value": false
-    
+    "no-trailing-whitespace": true,
+    "jsx-boolean-value": false,
+    "indent": [true, "spaces", 2],
+    "quotemark": [true, "double", "avoid-escape"],
+    "semicolon": [true, "always", "ignore-interfaces"]
   },
   "linterOptions": {
     "exclude": [
