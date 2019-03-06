@@ -2,7 +2,11 @@
   "extends": [
     "stylelint-config-recommended-scss",
   ],
+  "plugins": [
+    "stylelint-order"
+  ],
   "rules": {
+    "order/properties-alphabetical-order": true,
     "at-rule-no-vendor-prefix": true,
     "block-no-empty": true,
     "comment-empty-line-before": "always",
