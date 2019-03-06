@@ -1,9 +1,9 @@
-import * as cn from 'classnames';
-import * as React from 'react';
+import * as cn from "classnames";
+import * as React from "react";
 
-import { CommonHtmlProps } from '../../../typings/html';
+import { CommonHtmlProps } from "../../../typings/html";
 
-import * as styles from './wrapper.scss';
+import * as styles from "./wrapper.scss";
 
 
 

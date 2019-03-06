@@ -16,8 +16,8 @@ interface ISVGIcon extends CommonHtmlProps {
 
 export const SVGIcon:React.SFC<ISVGIcon> = ({ svg, size }) => {
   function createMarkup (): React.ReactNode {
-    return <div className={cn(styles.svgIcon, size)} dangerouslySetInnerHTML={{__html: svg}} />
+    return <div className={cn(styles.svgIcon, size)} dangerouslySetInnerHTML={{__html: svg}} />;
   }
 
-  return (<>{createMarkup()}</>)
-}
+  return (<>{createMarkup()}</>);
+};

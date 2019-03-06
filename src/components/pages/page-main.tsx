@@ -1,10 +1,10 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Wrapper } from '../wrapper/wrapper';
-import { Page } from './page';
+import { Wrapper } from "../wrapper/wrapper";
+import { Page } from "./page";
 
-import { ENV_EXAMPLE_VARIABLE } from '../../env';
-import * as styles from './page-main.scss';
+import { ENV_EXAMPLE_VARIABLE } from "../../env";
+import * as styles from "./page-main.scss";
 
 
 

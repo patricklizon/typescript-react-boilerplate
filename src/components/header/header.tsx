@@ -1,9 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Wrapper } from '../wrapper/wrapper';
-import { HeaderNavigation } from './navigation/header-navigation';
+import { Wrapper } from "../wrapper/wrapper";
+import { HeaderNavigation } from "./navigation/header-navigation";
 
-import * as styles from './header.scss';
+import * as styles from "./header.scss";
 
 
 

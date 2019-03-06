@@ -15,16 +15,16 @@ interface IAppRoutes {
 
 export const routes: IAppRoutes = Object.freeze({
   main: {
-    pathname: '/',
-    name: 'main'
+    pathname: "/",
+    name: "main"
   },
   styles: {
-    pathname: '/styles/',
-    name: 'styles',
+    pathname: "/styles/",
+    name: "styles",
   },
   packages: {
-    pathname: '/packages/',
-    name: 'packages'
+    pathname: "/packages/",
+    name: "packages"
   }
 });
 

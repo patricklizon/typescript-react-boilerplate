@@ -1,11 +1,11 @@
-import * as cn from 'classnames';
-import * as React from 'react';
-import { NavLink } from 'react-router-dom';
+import * as cn from "classnames";
+import * as React from "react";
+import { NavLink } from "react-router-dom";
 
-import { CommonHtmlProps } from '../../../../typings/html';
-import { headerNavigationRoutes } from '../../../routes';
+import { CommonHtmlProps } from "../../../../typings/html";
+import { headerNavigationRoutes } from "../../../routes";
 
-import * as styles from './header-navigation.scss';
+import * as styles from "./header-navigation.scss";
 
 
 
@@ -28,8 +28,8 @@ const ListedLink: React.SFC<IListedLink> = ({to, name}) => {
           {name}
       </NavLink>
     </li>
-  )
-}
+  );
+};
 
 
 

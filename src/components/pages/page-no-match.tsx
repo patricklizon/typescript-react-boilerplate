@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
-import { Wrapper } from '../wrapper/wrapper';
-import { Page } from './page';
+import { Wrapper } from "../wrapper/wrapper";
+import { Page } from "./page";
 
 
 

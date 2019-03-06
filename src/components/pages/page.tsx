@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from "react";
 
-import * as styles from './page.scss';
+import * as styles from "./page.scss";
 
 
 const Page: React.SFC = ({children, ...rest}) => {
@@ -12,9 +12,9 @@ const Page: React.SFC = ({children, ...rest}) => {
     >
         {children}
     </main>
-  )
-}
+  );
+};
 
 
 
-export { Page }
+export { Page };
