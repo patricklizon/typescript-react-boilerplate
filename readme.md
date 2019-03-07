@@ -1,19 +1,18 @@
-TypeScript React boilerplate
-===
+# TypeScript React boilerplate
 
-### Starting project
+## Usage
 
+Install all dependencies and open [http://0.0.0.0:9000](http://0.0.0.0:9000)
 ```sh
 $ npm i
 $ npm start
 ```
 
-
-### Linting
+## Linting
 
 This boilerplate project includes TSLint and StyleLint.
 
-#### Running linter
+### Running linter
 Lint all TS and SCSS files in project
 ```sh
 $ npm run lint
@@ -27,16 +26,16 @@ Lint only SCSS files
 $ npm run lint:lang:scss
 ```
 
-#### Fixing linter issues
-Fix all TS and SCSS linter issues
+### Fixing linter issues
+Fix all TS and SCSS files
 ```sh
 $ npm run lint:fix
 ```
-Fix only TS linter issues
+Fix only TS files
 ```sh
 $ npm run lint:fix:ts
 ```
-Fix only SCSS linter issues
+Fix only SCSS files
 ```sh
 $ npm run lint:fix:scss
 ```
